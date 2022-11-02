@@ -1,0 +1,17 @@
+version: '2'
+services:
+  moodle:
+    image: docker.io/bitnami/moodle:4
+    ports:
+      - '80:8080'
+      - '443:8443'
+    environment:
+      - MOODLE_DATABASE_HOST=54.156.15.164
+      - MOODLE_DATABASE_PORT_NUMBER=3306
+      - MOODLE_DATABASE_USER=bn_moodle
+      - MOODLE_DATABASE_NAME=bitnami_moodle
+      # ALLOW_EMPTY_PASSWORD is recommended only for development.
+      - ALLOW_EMPTY_PASSWORD=yes
+    volumes:
+      - 'mnt/moodle/moodle_data:/bitnami/moodle'
+      - 'mnt/moodle/moodledata_data:/bitnami/moodledata'
