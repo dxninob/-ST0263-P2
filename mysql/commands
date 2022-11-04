@@ -3,8 +3,8 @@ sudo apt install docker.io -y
 sudo apt install docker-compose -y
 sudo apt install git -y
 
-git clone https://github.com/dxninob/ST0263-P2.git
-sudo mkdir /home/ubuntu/mysql
+git clone https://github.com/ubuntu/ST0263-P2.git
+sudo mkdir home/ubuntu/mysql
 cd ST0263-P2/mysql
 sudo cp docker-compose.yml /home/ubuntu/mysql
 
