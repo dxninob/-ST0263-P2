@@ -2,7 +2,7 @@ sudo apt update
 sudo apt install nfs-common -y
 
 sudo nano /etc/fstab
-172.31.27.212:/mnt/nfs_share /var/www/html nfs auto 0 0
+172.31.19.234:/mnt/nfs_share /var/www/html nfs auto 0 0
 sudo mount
 
 sudo apt install docker.io -y
