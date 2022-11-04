@@ -19,9 +19,13 @@ sudo docker-compose up --build -d
 
 
 sudo apt update
-sudo apt install nfs-common
+sudo apt install nginx -y
+sudo apt install nfs-common -y
 sudo mkdir -p /mnt/moodle
-sudo mount 172.31.87.58:/mnt/nfs_share /mnt/moodle
+sudo nano /etc/fstab
+172.31.27.212:/mnt/nfs_share /mnt/moodle nfs auto 0 0
+sudo mount
+
 cd /mnt/moodle/
 sudo touch sample1.text sample2.text
 ls -l /mnt/moodle/
