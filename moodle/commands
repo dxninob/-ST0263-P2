@@ -1,0 +1,27 @@
+sudo apt update
+sudo apt install docker.io -y
+sudo apt install docker-compose -y
+sudo apt install git -y
+
+git clone https://github.com/dxninob/ST0263-P2.git
+sudo mkdir /home/ubuntu/moodle
+cd ST0263-P2/moodle
+sudo cp docker-compose.yml /home/ubuntu/moodle
+
+sudo systemctl enable docker
+sudo systemctl start docker
+sudo usermod -a -G docker ubuntu
+
+cd /home/ubuntu/moodle
+sudo docker-compose up --build -d
+
+
+
+
+sudo apt update
+sudo apt install nfs-common
+sudo mkdir -p /mnt/moodle
+sudo mount 172.31.87.58:/mnt/nfs_share /mnt/moodle
+cd /mnt/moodle/
+sudo touch sample1.text sample2.text
+ls -l /mnt/moodle/
