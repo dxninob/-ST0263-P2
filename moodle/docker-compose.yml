@@ -13,5 +13,5 @@ services:
       # ALLOW_EMPTY_PASSWORD is recommended only for development.
       - ALLOW_EMPTY_PASSWORD=yes
     volumes:
-      - 'mnt/moodle/moodle_data:/bitnami/moodle'
-      - 'mnt/moodle/moodledata_data:/bitnami/moodledata'
+      - '/mnt/moodle/moodle_data:/bitnami/moodle'
+      - '/mnt/moodle/moodledata_data:/bitnami/moodledata
