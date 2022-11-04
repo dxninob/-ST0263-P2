@@ -19,7 +19,6 @@ sudo docker-compose up --build -d
 
 
 sudo apt update
-sudo apt install nginx -y
 sudo apt install nfs-common -y
 sudo mkdir -p /mnt/moodle
 sudo nano /etc/fstab
