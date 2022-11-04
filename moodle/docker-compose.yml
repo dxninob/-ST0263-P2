@@ -6,7 +6,7 @@ services:
       - '80:8080'
       - '443:8443'
     environment:
-      - MOODLE_DATABASE_HOST=54.156.15.164
+      - MOODLE_DATABASE_HOST=172.31.22.239
       - MOODLE_DATABASE_PORT_NUMBER=3306
       - MOODLE_DATABASE_USER=bn_moodle
       - MOODLE_DATABASE_NAME=bitnami_moodle
