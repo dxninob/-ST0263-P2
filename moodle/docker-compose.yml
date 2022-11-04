@@ -14,4 +14,4 @@ services:
       - ALLOW_EMPTY_PASSWORD=yes
     volumes:
       - '/mnt/moodle/moodle_data:/bitnami/moodle'
-      - '/mnt/moodle/moodledata_data:/bitnami/moodledata
+      - '/mnt/moodle/moodledata_data:/bitnami/moodledata'
