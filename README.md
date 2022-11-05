@@ -21,7 +21,7 @@ Realizar una aplicación monolítica no escalable desplegada en DCA, con nombre 
 - Hacer el despliegue del ambiente de pruebas en el DCA.
 
 ## 1.2. Aspectos NO desarrollados de la actividad propuesta
-Todo lo requerido fue implementado.
+- En el despliegue con el DCA, hay contenido que no despacha por https sino por http.
 
 
 # 2. Información general
@@ -260,7 +260,12 @@ Prueba la instancia "Moodle 2"
 
 Prueba del dominio que hace uso de la instancia "Load Balancer"  
 
-Certificado SSL de la página 
+<img width="960" alt="lbdca" src="https://user-images.githubusercontent.com/60080916/200107105-ed1e400c-515e-4df2-9fda-2cf4de5f3640.PNG">
+
+Certificado SSL de la página  
+
+<img width="408" alt="ssl" src="https://user-images.githubusercontent.com/60080916/200107103-1fa501b0-f0be-43fa-b66d-7f0dcfdc9856.PNG">
+
 
 # 5. Referencias
 - https://github.com/st0263eafit/st0263-2022-2/tree/main/docker-nginx-wordpress-ssl-letsencrypt
