@@ -120,8 +120,70 @@ Guardar la configuración de nginx:
 sudo mkdir -p /var/www/letsencrypt
 sudo nginx -t
 ```
+Pedir certificados ssl:
+```
+sudo letsencrypt certonly -a webroot --webroot-path=/var/www/letsencrypt -m sceballosp@eafit.edu.co --agree-tos -d proyecto26.equipo6.tk
+```
+```
+sudo certbot --server https://acme-v02.api.letsencrypt.org/directory -d *.equipo6.tk --manual --preferred-challenges dns-01 certonly
+```
+- **IMPORTANTE:** Al ejecutar el comando anterior hay un periodo de espera en el que se debe agregar un registro TXT en el DNS para que funcione.
 
-
+Crear carpeta para los certificados:
+```
+mkdir -p nginx/ssl
+```
+Copiar los certificados a la carpeta creada anteriormente:
+```
+sudo su
+cp /etc/letsencrypt/live/proyecto26.equipo6.tk/* /home/ubuntu/nginx/ssl/
+cp /etc/letsencrypt/live/equipo6.tk/* /home/ubuntu/nginx/ssl/
+```
+Copiar el archivo options-ssl-nginx.conf:
+```
+cd ST0263-P2/nginx
+cp options-ssl-nginx.conf /home/ubuntu/nginx/ssl/
+```
+Acceder al directorio home/ubuntu/nginx/ssl y crear la llave ss-dhparams.pem:
+```
+openssl dhparam -out ssl-dhparams.pem 512
+```
+Correr los siguientes comandos:
+```
+DOMAIN='proyecto26.equipo6.tk' bash -c 'cat /etc/letsencrypt/live/$DOMAIN/fullchain.pem /etc/letsencrypt/live/$DOMAIN/privkey.pem > /etc/letsencrypt/$DOMAIN.pem'
+cp /etc/letsencrypt/live/equipo6.tk/* /home/ubuntu/nginx/ssl/
+exit
+```
+Instalar docker ydocker-compose:
+```
+sudo apt install docker.io -y
+sudo apt install docker-compose -y
+```
+Inicializar Docker:
+```
+sudo systemctl enable docker
+sudo systemctl start docker
+sudo usermod -a -G docker ubuntu
+sudo reboot
+```
+Copiar archivos:
+```
+cd ST0263-P2/nginx
+sudo cp docker-compose.yml /home/ubuntu/nginx
+sudo cp /nginxv2/nginx.conf /home/ubuntu/nginx
+sudo cp ssl.conf /home/ubuntu/nginx
+```
+Detener nginx:
+```
+ps ax | grep nginx
+netstat -an | grep 80
+sudo systemctl disable nginx
+sudo systemctl stop nginx
+```
+Inicializar Docker:
+```
+docker-compose up --build -d
+```
 
 ### 2. Servidor de base de datos
 Instalamos Docker, Docker-compose y Git:
