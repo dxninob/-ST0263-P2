@@ -99,6 +99,29 @@ ssh userdca@ip
 En el siguiente desarrollo los comandos ejecutados son los usados para el despliegue de AWS, estos mismos comandos son los usados para el despligue en el DCA, solo hace falta cambiar los nombres de usuario y direcciones IP para que funcione correctamente.  
 
 ### 1. Balanceador de cargas
+Instalamos let's encrypt, nginx y git:
+```
+sudo apt update
+sudo apt install python3-pip
+sudo -H pip3 install certbot
+sudo apt install letsencrypt -y
+sudo apt install nginx -y
+sudo apt install git -y
+```
+Clonamos el GitHub del proyecto para copiar el archivo de configuracion de nginx:
+```
+git clone https://github.com/dxninob/ST0263-P2.git
+sudo mkdir /home/ubuntu/nginx
+cd ST0263-P2/nginx/nginxv1
+sudo cp nginx.conf /etc/nginx/
+```
+Guardar la configuración de nginx:
+```
+sudo mkdir -p /var/www/letsencrypt
+sudo nginx -t
+```
+
+
 
 ### 2. Servidor de base de datos
 Instalamos Docker, Docker-compose y Git:
