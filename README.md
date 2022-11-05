@@ -85,9 +85,10 @@ Se configura el dominio para especificar que el certificado SSL viene asignado e
 ![WhatsApp Image 2022-11-04 at 11 02 43 PM](https://user-images.githubusercontent.com/60080916/200100042-447c8792-da70-484e-bbc3-ee506e506743.jpeg)
 
 ## Lanzar el servidor
-Para lanzar los servidores en el despligue de AWS, debemos ingresar a las maquinas virtuales con SSH y lanzar los contenedores como se explica posteriormente.  
-
-<img width="595" alt="5" src="https://user-images.githubusercontent.com/60080916/200100223-18887ae7-1192-4b20-a455-92d86d3135c4.PNG">
+Para lanzar los servidores en el despligue de AWS, debemos ingresar a las maquinas virtuales con SSH y lanzar los contenedores como se explica posteriormente.  Este es el comando para conectarse a las maquinas:
+```
+ssh -i "Labs.pem" ubuntu@ip
+```
 
 Para lanzar los servidores en el despligue del DCA, debemos ingresar a las maquinas virtuales con SSH y lanzar los contenedores como se explica posteriormente.  Este es el comando para conectarse a las maquinas:
 ```
