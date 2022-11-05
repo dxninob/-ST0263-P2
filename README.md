@@ -196,7 +196,7 @@ Con este comando podemos ver que sí haya quedado montada la carpeta correctamen
 sudo mount
 ```
 
-Hasta este punto, la conexión con el servior NFS ha quedado lista.  Los siguientes comandos son para correr Moodle en las maquinas virtuales.  
+En este punto, hay que reiniciar la maquina virtual del Moodle, en AWS esta se puede reiniciar desde la plataforma y para el DCA se puede usar este comando ```sudo shutdown -r```.  Luego de hacer esto, la conexión con el servior NFS ha quedado lista.  Los siguientes comandos son para correr Moodle en las maquinas virtuales.  
 
 Instalamos Docker, Docker-compose y Git:
 ```
@@ -232,7 +232,35 @@ El usuario solo debe acceder a la URL https://proyecto26.equipo6.tk desde cualqu
 
 
 ## Resultados
+### Despliegue en AWS
+Prueba la instancia "Moodle 1"  
 
+<img width="960" alt="m1" src="https://user-images.githubusercontent.com/60080916/200104777-648ddc1a-c248-4c2d-ab79-7901ea5769e3.PNG">
+
+Prueba la instancia "Moodle 2"  
+
+<img width="960" alt="m2" src="https://user-images.githubusercontent.com/60080916/200104776-d8f51474-396e-4d69-853a-cd5f631834eb.PNG">
+
+Prueba del dominio que hace uso de la instancia "Load Balancer"  
+
+<img width="960" alt="lb" src="https://user-images.githubusercontent.com/60080916/200104775-7b5b6bfb-a97f-4ebe-9d91-b742ef6f052a.PNG">
+
+Certificado SSL de la página  
+
+<img width="407" alt="ssl" src="https://user-images.githubusercontent.com/60080916/200104774-bb72398c-f493-4eed-9bee-b1a7f78042e0.PNG">
+
+### Despliegue en el DCA
+Prueba la instancia "Moodle 1"  
+
+<img width="960" alt="dcam1" src="https://user-images.githubusercontent.com/60080916/200104952-66fe113c-e0c1-47f8-99f0-9235c84826fe.PNG">
+
+Prueba la instancia "Moodle 2"  
+
+<img width="960" alt="dcam2" src="https://user-images.githubusercontent.com/60080916/200104950-39222094-9509-43e3-84bd-f840bd02abbb.PNG">
+
+Prueba del dominio que hace uso de la instancia "Load Balancer"  
+
+Certificado SSL de la página 
 
 # 5. Referencias
 - https://github.com/st0263eafit/st0263-2022-2/tree/main/docker-nginx-wordpress-ssl-letsencrypt
