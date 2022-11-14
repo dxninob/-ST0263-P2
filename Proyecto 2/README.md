@@ -32,6 +32,7 @@ Se realizó el despliegue de una aplicación open source LAMP con Moodle. El des
 # 2. Información general
 
 - Se usaron contenedores Docker para hacer el despliegue de las instancias.
+- Se uso CloudFlare para el manejo del DNS y certificados SSL. 
 
 # 3. Descripción del ambiente de desarrollo, técnico y de ejecución
 
@@ -177,7 +178,13 @@ En el menú de EC2, escoja Load Balancers y seguir los pasos:
 ![3](https://user-images.githubusercontent.com/60147093/201781472-b9b1829f-3d19-4870-8cb5-a7cd12771365.PNG)
 ![4](https://user-images.githubusercontent.com/60147093/201781477-bb6fe620-7308-4bb3-8c69-70e28a80bfbc.PNG)
 ![5](https://user-images.githubusercontent.com/60147093/201781478-5ccbe3f4-b7e1-4c16-b80b-3cdfdc47ce16.PNG)
+
+Resumen de configuracion:
+
 ![6](https://user-images.githubusercontent.com/60147093/201781479-a39fe4de-04d0-4442-8605-c32680b55843.PNG)
+
+Informacion del balanceador:
+
 ![7](https://user-images.githubusercontent.com/60147093/201781482-822a6924-1041-452c-becc-6d46f0c562fd.PNG)
 
 ### 8. Crear un Launch Template:
@@ -202,8 +209,16 @@ En el menú de EC2, escoja Auto scaling group y seguir los pasos:
 ### 10. Configuracion de DNS:
 Acceder al administrador de DNS, en este caso Cloud Flare:
 
+- Agregar u registro CNAME con el DNS name que da el balanceador:
+
 ![cloudflare 1](https://user-images.githubusercontent.com/60147093/201782127-c32e19ad-6cc1-4fb6-b4d1-b6f85c8069fb.PNG)
+
+- Cambiar el modo de encripcion a FULL:
+
 ![cloudfrale 2](https://user-images.githubusercontent.com/60147093/201782128-72deb32d-2107-44ca-a717-c665096601f8.PNG)
+
+- Certificados SSL asignados: 
+
 ![cloudfrale 3](https://user-images.githubusercontent.com/60147093/201782123-4c40b3c6-3e1b-42ba-a2f0-6a8325ae099f.PNG)
 
 
