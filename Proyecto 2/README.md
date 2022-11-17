@@ -113,6 +113,13 @@ sudo apt install mysql-client
 
 <img width="713" alt="create database" src="https://user-images.githubusercontent.com/60147093/201780181-f7eb8c9f-50de-4fbd-8439-d23b8427298e.PNG">
 
+- Verficar que se haya hecho el mount correctamente:
+```
+mount
+```
+
+![mount](https://user-images.githubusercontent.com/60147093/202485438-ab8de85f-e9b6-4f3c-925f-26df7d0db714.PNG)
+
 - Instalamos Docker, Docker-compose y Git:
 ```
 sudo apt install docker.io -y
